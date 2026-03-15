@@ -1,0 +1,10 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #55AAAA;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
