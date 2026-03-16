@@ -1,8 +1,14 @@
-import { TaskBar } from "@react95/core";
-import { Desktop } from "@react95/icons";
+import { List, TaskBar } from "@react95/core";
 
 export default function App() {
   return (
-    <TaskBar></TaskBar>
-  )
+    <>
+      <TaskBar
+        list={
+          <List width="225px">
+          </List>
+        }
+      />
+    </>
+  );
 }
