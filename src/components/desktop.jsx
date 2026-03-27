@@ -35,11 +35,6 @@ export default function Desktop() {
         remove(modals.sobre);
     };
 
-    const handleMinimizeSobreModal = () => {
-        minimize(modals.sobre);
-        focus('no-id');
-    };
-
     const handleRestoreSobreModal = () => {
         add({
             id: modals.sobre,
@@ -58,7 +53,7 @@ export default function Desktop() {
         <>
             <TaskBar list={
                 <List width="225px">
-                    <List.Item icon={<Explorer101 variant="32x32_4" />}>
+                    <List.Item icon={<Explorer101 variant="32x32_4" />} onClick={handleRestoreSobreModal}>
                         Sobre
                     </List.Item>
                 </List>
@@ -73,7 +68,6 @@ export default function Desktop() {
                 <>
                     <Modal.Minimize />
                     <TitleBar.Close onClick={handleCloseSobreModal} />
-
                 </>
             } buttons={[{
                 value: 'Ok',
