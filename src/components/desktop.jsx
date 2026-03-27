@@ -1,106 +1,28 @@
-import { List, TaskBar, useModal, Modal, Frame, TitleBar } from "@react95/core";
-import { Explorer100, Explorer101, Mmsys113 } from "@react95/icons";
-import { useEffect } from "react";
+import { List, TaskBar, useModal } from "@react95/core";
+import { Explorer101 } from "@react95/icons";
+import AboutModal from "./aboutModal";
+import { modals } from "../utils/modals";
 
 export default function Desktop() {
 
-    const modals = {
-        sobre: 'sobre'
-    }
+    const { restore, focus } = useModal();
 
-    const {
-        add,
-        remove,
-        minimize,
-        restore,
-        focus
-    } = useModal()
-
-    useEffect(() => {
-        // Register modals with the modal manager so they appear in the TaskBar
-        add({
-            id: modals.sobre,
-            title: 'Sobre',
-            icon: <Mmsys113 variant="32x32_4" />,
-            hasButton: true
-
-        });
-
-        // Optionally restore the first modal on mount
-        restore(modals.sobre);
-    }, [add, modals.sobre, restore]);
-
-    const handleCloseSobreModal = () => {
-        minimize(modals.sobre);
-        remove(modals.sobre);
+    const handleRestoreAboutModal = () => {
+        restore(modals.about);
+        focus(modals.about);
     };
-
-    const handleRestoreSobreModal = () => {
-        add({
-            id: modals.sobre,
-            title: 'First Modal',
-            icon: <Mmsys113 variant="32x32_4" />,
-            hasButton: true
-        });
-        restore(modals.sobre);
-        focus(modals.sobre);
-    };
-
-    const handleFocusSobre = () => focus(modals.sobre);
-    const handleButtonClick = (e) => alert(e.currentTarget.value);
 
     return (
         <>
             <TaskBar list={
                 <List width="225px">
-                    <List.Item icon={<Explorer101 variant="32x32_4" />} onClick={handleRestoreSobreModal}>
+                    <List.Item icon={<Explorer101 variant="32x32_4" />} onClick={handleRestoreAboutModal}>
                         Sobre
                     </List.Item>
                 </List>
             } />
 
-            <Modal id="sobre" icon={<Mmsys113 variant="32x32_4" />} title="Sobre" dragOptions={{
-                defaultPosition: {
-                    x: 50,
-                    y: 100
-                }
-            }} titleBarOptions={
-                <>
-                    <Modal.Minimize />
-                    <TitleBar.Close onClick={handleCloseSobreModal} />
-                </>
-            } buttons={[{
-                value: 'Ok',
-                onClick: handleButtonClick
-            }, {
-                value: 'Cancel',
-                onClick: handleButtonClick
-            }]}>
-                <Modal.Content width="350px" boxShadow="$in" bgColor="white" p="16px">
-                    <Frame as="div" display="flex" flexDirection="column" gap="8px">
-                        <h4>Modal Control</h4>
-                        <p>
-                            This modal is controlled entirely using the{' '}
-                            <code>useModal()</code> hook:
-                        </p>
-                        <ul style={{
-                            fontSize: '14px',
-                            margin: '8px 0'
-                        }}>
-                            <li>
-                                <code>minimize(id)</code> - Minimize modal
-                            </li>
-                            <li>
-                                <code>restore(id)</code> - Restore modal
-                            </li>
-                            <li>
-                                <code>focus(id)</code> - Bring to focus
-                            </li>
-                        </ul>
-                        <p>Try the control buttons above or use the TaskBar below.</p>
-                    </Frame>
-                </Modal.Content>
-            </Modal>
+            <AboutModal id={modals.about} />
         </>
     )
 }
