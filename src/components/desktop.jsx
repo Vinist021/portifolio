@@ -1,4 +1,4 @@
-import { List, TaskBar, useModal, Modal, Frame } from "@react95/core";
+import { List, TaskBar, useModal, Modal, Frame, TitleBar } from "@react95/core";
 import { Explorer100, Explorer101, Mmsys113 } from "@react95/icons";
 import { useEffect } from "react";
 
@@ -64,27 +64,23 @@ export default function Desktop() {
                 </List>
             } />
 
-            <Modal id="first-modal" icon={<Mmsys113 variant="32x32_4" />} title="First Modal" dragOptions={{
+            <Modal id="sobre" icon={<Mmsys113 variant="32x32_4" />} title="Sobre" dragOptions={{
                 defaultPosition: {
                     x: 50,
                     y: 100
                 }
-            }} titleBarOptions={<Modal.Minimize />} buttons={[{
+            }} titleBarOptions={
+                <>
+                    <Modal.Minimize />
+                    <TitleBar.Close onClick={handleCloseSobreModal} />
+
+                </>
+            } buttons={[{
                 value: 'Ok',
                 onClick: handleButtonClick
             }, {
                 value: 'Cancel',
                 onClick: handleButtonClick
-            }]} menu={[{
-                name: 'File',
-                list: <List width="200px">
-                    <List.Item onClick={handleCloseSobreModal}>Exit</List.Item>
-                </List>
-            }, {
-                name: 'Edit',
-                list: <List width="200px">
-                    <List.Item>Copy</List.Item>
-                </List>
             }]}>
                 <Modal.Content width="350px" boxShadow="$in" bgColor="white" p="16px">
                     <Frame as="div" display="flex" flexDirection="column" gap="8px">
@@ -111,7 +107,6 @@ export default function Desktop() {
                     </Frame>
                 </Modal.Content>
             </Modal>
-
         </>
     )
 }
