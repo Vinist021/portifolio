@@ -1,5 +1,5 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
-import { Mmsys113 } from "@react95/icons";
+import { Explorer101, Mmsys113 } from "@react95/icons";
 
 export default function AboutModal({ id = 'about'}) {
     const { remove, minimize } = useModal();
@@ -12,7 +12,7 @@ export default function AboutModal({ id = 'about'}) {
     const handleButtonClick = (e) => alert(e.currentTarget.value);
 
     return (
-        <Modal id={id} icon={<Mmsys113 variant="32x32_4" />} title="Sobre" dragOptions={{
+        <Modal id={id} icon={<Explorer101 variant="32x32_4" />} title="Sobre" dragOptions={{
             defaultPosition: {
                 x: 200,
                 y: 100

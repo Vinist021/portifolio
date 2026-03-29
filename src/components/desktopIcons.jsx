@@ -1,9 +1,7 @@
-import { Cursor, List, TaskBar, useModal } from "@react95/core";
-import { Explorer101, Mmsys113 } from "@react95/icons";
-import AboutModal from "./AboutModal";
+import { Cursor, useModal } from "@react95/core"
 import { modals } from "../utils/modals";
 
-export default function Desktop() {
+export default function DesktopIcons() {
 
     const { add, restore, focus } = useModal();
 
@@ -20,14 +18,6 @@ export default function Desktop() {
 
     return (
         <>
-            <TaskBar list={
-                <List width="225px">
-                    <List.Item icon={<Explorer101 variant="32x32_4" />} onClick={handleOpenAboutModal}>
-                        Sobre
-                    </List.Item>
-                </List>
-            } />
-
             <div style={{ width: 100, marginLeft: 10, marginTop: 10 }}>
                 <div className={Cursor.Pointer} onClick={() => handleOpenAboutModal()}>
                     <Explorer101
@@ -45,12 +35,10 @@ export default function Desktop() {
                             color: "black",
                         }}
                     >
-                        Sobre
+                        Portfolio
                     </p>
                 </div>
             </div>
-
-                <AboutModal id={modals.about} />
-            </>
-            )
+        </>
+    )
 }
