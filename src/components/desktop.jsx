@@ -3,6 +3,7 @@ import { Explorer101, Mmsys113 } from "@react95/icons";
 import AboutModal from "./AboutModal";
 import { modals } from "../utils/modals";
 import DesktopIcons from "./desktopIcons";
+import DesktopTaskBar from "./desktopTaskBar";
 
 export default function Desktop() {
 
@@ -12,7 +13,7 @@ export default function Desktop() {
         add({
             id: modals.about,
             title: 'Sobre',
-            icon: <Mmsys113 variant="32x32_4" />,
+            icon: <Explorer101 variant="32x32_4" />,
             hasButton: true
         });
         restore(modals.about);
@@ -21,17 +22,11 @@ export default function Desktop() {
 
     return (
         <>
-            <TaskBar list={
-                <List width="225px">
-                    <List.Item icon={<Explorer101 variant="32x32_4" />} onClick={handleOpenAboutModal}>
-                        Sobre
-                    </List.Item>
-                </List>
-            } />
+            <DesktopTaskBar openAboutModal={handleOpenAboutModal} />
 
-                <DesktopIcons openAboutModal={handleOpenAboutModal} />
+            <DesktopIcons openAboutModal={handleOpenAboutModal} />
 
-                <AboutModal id={modals.about} />
-            </>
-            )
+            <AboutModal id={modals.about} />
+        </>
+    )
 }
