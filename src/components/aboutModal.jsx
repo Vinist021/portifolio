@@ -1,22 +1,8 @@
-import { useEffect, useMemo } from 'react';
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Mmsys113 } from "@react95/icons";
 
-export default function AboutModal({ id = 'about', autoRestore = true }) {
-    const { add, remove, minimize, restore } = useModal();
-
-    const modalOptions = useMemo(() => ({
-        id,
-        title: 'Sobre',
-        icon: <Mmsys113 variant="32x32_4" />,
-        hasButton: true
-    }), [id]);
-
-    useEffect(() => {
-        add(modalOptions);
-        if (autoRestore) restore(id);
-        return () => remove(id);
-    }, [add, remove, restore, modalOptions, id, autoRestore]);
+export default function AboutModal({ id = 'about'}) {
+    const { remove, minimize } = useModal();
 
     const handleClose = () => {
         minimize(id);
