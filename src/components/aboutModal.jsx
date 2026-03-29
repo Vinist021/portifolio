@@ -19,8 +19,8 @@ export default function AboutModal({ id = 'about'}) {
             }
         }} titleBarOptions={
             <>
-                <Modal.Minimize />
-                <TitleBar.Close onClick={handleClose} />
+                <Modal.Minimize className="cursor-default"/>
+                <TitleBar.Close onClick={handleClose} className="cursor-default" />
             </>
         } buttons={[{
             value: 'Ok',

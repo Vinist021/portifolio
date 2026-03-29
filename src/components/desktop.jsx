@@ -1,6 +1,6 @@
 import { List, TaskBar, useModal } from "@react95/core";
 import { Explorer101, Mmsys113 } from "@react95/icons";
-import AboutModal from "./aboutModal";
+import AboutModal from "./AboutModal";
 import { modals } from "../utils/modals";
 
 export default function Desktop() {
