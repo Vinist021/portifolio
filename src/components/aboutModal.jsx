@@ -28,7 +28,7 @@ export default function AboutModal({ id = 'about', autoRestore = true }) {
     return (
         <Modal id={id} icon={<Mmsys113 variant="32x32_4" />} title="Sobre" dragOptions={{
             defaultPosition: {
-                x: 50,
+                x: 200,
                 y: 100
             }
         }} titleBarOptions={
