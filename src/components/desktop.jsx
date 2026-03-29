@@ -2,6 +2,7 @@ import { Cursor, List, TaskBar, useModal } from "@react95/core";
 import { Explorer101, Mmsys113 } from "@react95/icons";
 import AboutModal from "./AboutModal";
 import { modals } from "../utils/modals";
+import DesktopIcons from "./desktopIcons";
 
 export default function Desktop() {
 
@@ -28,27 +29,7 @@ export default function Desktop() {
                 </List>
             } />
 
-            <div style={{ width: 100, marginLeft: 10, marginTop: 10 }}>
-                <div className={Cursor.Pointer} onClick={() => handleOpenAboutModal()}>
-                    <Explorer101
-                        variant="32x32_4"
-                        style={{ marginLeft: 32, marginTop: 15 }}
-                    />
-                    <p
-                        style={{
-                            fontFamily: "MS Sans Serif",
-                            fontSize: 13,
-                            justifyContent: "center",
-                            marginTop: 5,
-                            width: 100,
-                            textAlign: "center",
-                            color: "black",
-                        }}
-                    >
-                        Sobre
-                    </p>
-                </div>
-            </div>
+                <DesktopIcons openAboutModal={handleOpenAboutModal} />
 
                 <AboutModal id={modals.about} />
             </>

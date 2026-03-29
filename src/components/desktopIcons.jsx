@@ -1,25 +1,12 @@
-import { Cursor, useModal } from "@react95/core"
-import { modals } from "../utils/modals";
+import { Cursor } from "@react95/core"
 
-export default function DesktopIcons() {
+import { Explorer101 } from "@react95/icons";
 
-    const { add, restore, focus } = useModal();
-
-    const handleOpenAboutModal = () => {
-        add({
-            id: modals.about,
-            title: 'Sobre',
-            icon: <Mmsys113 variant="32x32_4" />,
-            hasButton: true
-        });
-        restore(modals.about);
-        focus(modals.about);
-    };
-
+export default function DesktopIcons({ openAboutModal }) {
     return (
         <>
             <div style={{ width: 100, marginLeft: 10, marginTop: 10 }}>
-                <div className={Cursor.Pointer} onClick={() => handleOpenAboutModal()}>
+                <div className={Cursor.Pointer} onClick={() => openAboutModal()}>
                     <Explorer101
                         variant="32x32_4"
                         style={{ marginLeft: 32, marginTop: 15 }}
