@@ -14,7 +14,7 @@ export default function AboutModal({ id = 'about'}) {
     return (
         <Modal id={id} icon={<Explorer101 variant="32x32_4" />} title="Sobre" dragOptions={{
             defaultPosition: {
-                x: 200,
+                x: 250,
                 y: 100
             }
         }} titleBarOptions={
@@ -29,7 +29,7 @@ export default function AboutModal({ id = 'about'}) {
             value: 'Cancel',
             onClick: handleButtonClick
         }]}>
-            <Modal.Content width="350px" boxShadow="$in" bgColor="white" p="16px">
+            <Modal.Content width="400px" height="300px" boxShadow="$in" bgColor="white" p="16px">
                 <Frame as="div" display="flex" flexDirection="column" gap="8px">
                     <h4>Modal Control</h4>
                     <p>

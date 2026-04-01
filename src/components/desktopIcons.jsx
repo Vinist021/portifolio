@@ -22,7 +22,7 @@ export default function DesktopIcons({ openAboutModal }) {
                             color: "black",
                         }}
                     >
-                        Portfolio
+                        Sobre
                     </p>
                 </div>
             </div>
