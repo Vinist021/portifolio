@@ -1,5 +1,6 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Explorer101, Mmsys113 } from "@react95/icons";
+import pixelme from "../shared/assets/pixelme.png";
 
 export default function AboutModal({ id = 'about'}) {
     const { remove, minimize } = useModal();
@@ -29,28 +30,16 @@ export default function AboutModal({ id = 'about'}) {
             value: 'Cancel',
             onClick: handleButtonClick
         }]}>
-            <Modal.Content width="400px" height="300px" boxShadow="$in" bgColor="white" p="16px">
+            <Modal.Content width="400px" height="300px" boxShadow="$in" bgColor="white">
                 <Frame as="div" display="flex" flexDirection="column" gap="8px">
-                    <h4>Modal Control</h4>
-                    <p>
-                        This modal is controlled entirely using the{' '}
-                        <code>useModal()</code> hook:
-                    </p>
-                    <ul style={{
-                        fontSize: '14px',
-                        margin: '8px 0'
-                    }}>
-                        <li>
-                            <code>minimize(id)</code> - Minimize modal
-                        </li>
-                        <li>
-                            <code>restore(id)</code> - Restore modal
-                        </li>
-                        <li>
-                            <code>focus(id)</code> - Bring to focus
-                        </li>
-                    </ul>
-                    <p>Try the control buttons above or use the TaskBar below.</p>
+                    <h4 className="mt-1 text-center text-2xl">Vinicius Teixeira</h4>
+                    <div className="flex items-start gap-4">
+                        <img src={pixelme} height="250px" width="210px" alt="Vinicius Teixeira" className="mt-[-30px] ms-[-25px]" />
+                        <div className="pt-0">
+                            <p className="text-sm">Texto teste</p>
+                        </div>
+                    </div>
+
                 </Frame>
             </Modal.Content>
         </Modal>
