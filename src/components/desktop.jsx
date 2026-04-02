@@ -1,7 +1,7 @@
-import { Cursor, List, TaskBar, useModal } from "@react95/core";
-import { Explorer101, Mmsys113 } from "@react95/icons";
-import AboutModal from "./aboutModal";
+import { useModal } from "@react95/core";
+import { Explorer101 } from "@react95/icons";
 import { modals } from "../shared/utils/modals";
+import AboutModal from "./aboutModal";
 import DesktopIcons from "./desktopIcons";
 import DesktopTaskBar from "./desktopTaskBar";
 

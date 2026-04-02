@@ -1,5 +1,5 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
-import { Explorer101, Mmsys113 } from "@react95/icons";
+import { Explorer101 } from "@react95/icons";
 import pixelme from "../shared/assets/pixelme.png";
 
 export default function AboutModal({ id = 'about' }) {
