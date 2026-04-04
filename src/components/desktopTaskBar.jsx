@@ -10,7 +10,7 @@ export default function DesktopTaskBar({ openAboutModal }) {
                 <List.Item icon={<Explorer101 variant="32x32_4" />} onClick={() => openAboutModal()}>
                     Sobre
                 </List.Item>
-                <List.Item style={{ paddingInlineStart: 10 }} icon={<><img src={xp} alt="Experiência" width="32px" height="32px" /></>}>
+                <List.Item style={{ paddingInlineStart: 10 }} icon={<img src={xp} alt="Experiência" width="32px" height="32px" style={{ marginRight: 5 }} />}>
                     Experiência
                 </List.Item>
             </List>
