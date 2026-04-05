@@ -38,7 +38,7 @@ export default function Desktop() {
 
             <DesktopIcons openAboutModal={handleOpenAboutModal} openExperienceModal={handleOpenExperienceModal} />
 
-            <AboutModal id={modals.about} />
+            <AboutModal id={modals.about} nextStep={handleOpenExperienceModal} />
             <ExperienceModal id={modals.experience} />
         </>
     )

@@ -2,7 +2,7 @@ import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Explorer101 } from "@react95/icons";
 import pixelme from "../shared/assets/pixelme.png";
 
-export default function AboutModal({ id = 'about' }) {
+export default function AboutModal({ id = 'about', nextStep }) {
     const { remove, minimize } = useModal();
 
     const handleClose = () => {
@@ -10,7 +10,7 @@ export default function AboutModal({ id = 'about' }) {
         remove(id);
     };
 
-    const handleButtonClick = (e) => alert(e.currentTarget.value);
+    const handleNextStep = () => nextStep();
 
     return (
         <Modal id={id} icon={<Explorer101 variant="32x32_4" />} title="Sobre" dragOptions={{
@@ -25,7 +25,7 @@ export default function AboutModal({ id = 'about' }) {
             </>
         } buttons={[{
             value: 'Próximo',
-            onClick: handleButtonClick
+            onClick: handleNextStep
         },]}>
             <Modal.Content width="400px" height="300px" boxShadow="$in" bgColor="white">
                 <Frame as="div" display="flex" flexDirection="column" gap="8px">
