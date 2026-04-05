@@ -20,11 +20,22 @@ export default function Desktop() {
         focus(modals.about);
     };
 
+    const handleExperienceModal = () => {
+        add({
+            id: modals.experience,
+            title: 'Experiência',
+            icon: <Explorer101 variant="32x32_4" />,
+            hasButton: true
+        });
+        restore(modals.experience);
+        focus(modals.experience);
+    };
+
     return (
         <>
-            <DesktopTaskBar openAboutModal={handleOpenAboutModal} />
+            <DesktopTaskBar openAboutModal={handleOpenAboutModal} openExperienceModal={handleExperienceModal} />
 
-            <DesktopIcons openAboutModal={handleOpenAboutModal} />
+            <DesktopIcons openAboutModal={handleOpenAboutModal} openExperienceModal={handleExperienceModal} />
 
             <AboutModal id={modals.about} />
         </>
