@@ -4,6 +4,7 @@ import { modals } from "../shared/utils/modals";
 import AboutModal from "./aboutModal";
 import DesktopIcons from "./desktopIcons";
 import DesktopTaskBar from "./desktopTaskBar";
+import ExperienceModal from "./experienceModal";
 
 export default function Desktop() {
 
@@ -20,7 +21,7 @@ export default function Desktop() {
         focus(modals.about);
     };
 
-    const handleExperienceModal = () => {
+    const handleOpenExperienceModal = () => {
         add({
             id: modals.experience,
             title: 'Experiência',
@@ -33,11 +34,12 @@ export default function Desktop() {
 
     return (
         <>
-            <DesktopTaskBar openAboutModal={handleOpenAboutModal} openExperienceModal={handleExperienceModal} />
+            <DesktopTaskBar openAboutModal={handleOpenAboutModal} openExperienceModal={handleOpenExperienceModal} />
 
-            <DesktopIcons openAboutModal={handleOpenAboutModal} openExperienceModal={handleExperienceModal} />
+            <DesktopIcons openAboutModal={handleOpenAboutModal} openExperienceModal={handleOpenExperienceModal} />
 
             <AboutModal id={modals.about} />
+            <ExperienceModal id={modals.experience} />
         </>
     )
 }
