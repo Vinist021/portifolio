@@ -1,5 +1,6 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Explorer101 } from "@react95/icons";
+import xp from '../shared/assets/xp.png'
 
 export default function ExperienceModal({ id = 'experience', onClose }) {
     const { remove, minimize } = useModal();
@@ -13,7 +14,7 @@ export default function ExperienceModal({ id = 'experience', onClose }) {
     const handleButtonClick = (e) => alert(e.currentTarget.value);
 
     return (
-        <Modal id={id} icon={<Explorer101 variant="32x32_4" />} title="Experiência" dragOptions={{
+        <Modal id={id} icon={<><img src={xp} alt="xp" width="20px" height="16px" style={{ marginRight: 3 }}/></>} title="Experiência" dragOptions={{
             defaultPosition: {
                 x: 350,
                 y: 150
