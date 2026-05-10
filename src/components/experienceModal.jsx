@@ -1,12 +1,13 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Explorer101 } from "@react95/icons";
 
-export default function ExperienceModal({ id = 'experience' }) {
+export default function ExperienceModal({ id = 'experience', onClose }) {
     const { remove, minimize } = useModal();
 
     const handleClose = () => {
         minimize(id);
         remove(id);
+        if (onClose) onClose();
     };
 
     const handleButtonClick = (e) => alert(e.currentTarget.value);

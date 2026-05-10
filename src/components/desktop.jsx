@@ -1,4 +1,5 @@
 import { useModal } from "@react95/core";
+import { useState } from "react";
 import { Explorer101 } from "@react95/icons";
 import { modals } from "../shared/utils/modals";
 import AboutModal from "./aboutModal";
@@ -9,6 +10,7 @@ import ExperienceModal from "./experienceModal";
 export default function Desktop() {
 
     const { add, restore, focus } = useModal();
+    const [showExperience, setShowExperience] = useState(false);
 
     const handleOpenAboutModal = () => {
         add({
@@ -22,6 +24,7 @@ export default function Desktop() {
     };
 
     const handleOpenExperienceModal = () => {
+        setShowExperience(true);
         add({
             id: modals.experience,
             title: 'Experiência',
@@ -39,7 +42,9 @@ export default function Desktop() {
             <DesktopIcons openAboutModal={handleOpenAboutModal} openExperienceModal={handleOpenExperienceModal} />
 
             <AboutModal id={modals.about} nextStep={handleOpenExperienceModal} />
-            <ExperienceModal id={modals.experience} />
+            {showExperience && (
+                <ExperienceModal id={modals.experience} onClose={() => setShowExperience(false)} />
+            )}
         </>
     )
 }
