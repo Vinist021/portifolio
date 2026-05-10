@@ -25,14 +25,6 @@ export default function Desktop() {
 
     const handleOpenExperienceModal = () => {
         setShowExperience(true);
-        add({
-            id: modals.experience,
-            title: 'Experiência',
-            icon: <Explorer101 variant="32x32_4" />,
-            hasButton: true
-        });
-        restore(modals.experience);
-        focus(modals.experience);
     };
 
     return (
