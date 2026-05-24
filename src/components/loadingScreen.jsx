@@ -10,7 +10,7 @@ export default function LoadingScreen() {
       <div className="flex flex-col items-center gap-[clamp(10px,2.5vw,18px)] p-[clamp(16px,4vw,32px)] text-center">
         <div className="absolute top-0 right-5 m-4 sm:text-[60px] text-[40px] !font-['Archivo_Black']">Microsoft</div>
         <img
-          className="w-[90%] h-auto max-w-full"
+          className="sm:w-[50%] w-[85%] h-auto max-w-full"
           src={winLogo}
           alt="Windows 95 logo"
         />
