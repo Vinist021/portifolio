@@ -17,3 +17,67 @@ body,
 .cursor-default {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAh0lEQVRYhe2WSwrAIAxEJ6H3v3K6MaX110WbzCYPRNTFPKOIAGAgoq2nSSgAmBlNwitAk9D7gCGh/US2xCCQLTEVyJRYCmRJbAUyJI7VgogMLgCGya88KjAJla79ziXQwsUlUi+hh0eHLQW68NQqKEg7d3bh1ioQekSv7wAbA/nHVBRFURThnD/uMROGdeAFAAAAAElFTkSuQmCC), default;
 }
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6fa8dc;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "MS Sans Serif", sans-serif;
+  pointer-events: all;
+}
+
+.loading-screen__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 2.5vw, 18px);
+  padding: clamp(16px, 4vw, 32px);
+  text-align: center;
+}
+
+.loading-screen__logo {
+  width: min(70vw, 320px);
+  height: auto;
+}
+
+.loading-screen__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2px, 1vw, 6px);
+}
+
+.loading-screen__microsoft {
+  font-size: clamp(16px, 2.6vw, 24px);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.loading-screen__windows {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(6px, 2vw, 14px);
+  font-size: clamp(30px, 7vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+  color: #000000;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+.loading-screen__windows-95 {
+  color: #1f5fbf;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .loading-screen__logo {
+    width: min(75vw, 260px);
+  }
+}
