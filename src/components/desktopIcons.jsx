@@ -1,5 +1,5 @@
 import { Cursor } from "@react95/core"
-import xp from "../shared/assets/xp.png"
+import xp from "../shared/assets/images/xp.png"
 
 import { Explorer101 } from "@react95/icons";
 

@@ -12,8 +12,8 @@ export default function App() {
     if (!showLoadingScreen) return;
     const timer = setTimeout(() => {
       setShowLoadingScreen(false);
-      sessionStorage.setItem("loadingScreenSeen", "true");
-    }, 5000);
+      sessionStorage.setItem("loadingScreenSeen", "false");
+    }, 1);
     return () => clearTimeout(timer);
   }, [showLoadingScreen]);
 

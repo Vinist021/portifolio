@@ -1,5 +1,5 @@
-import loadingBackground from "../shared/assets/loadingBackground.png";
-import winLogo from "../shared/assets/winLogo.png";
+import loadingBackground from "../shared/assets/images/loadingBackground.png";
+import winLogo from "../shared/assets/images/winLogo.png";
 
 export default function LoadingScreen() {
   return (

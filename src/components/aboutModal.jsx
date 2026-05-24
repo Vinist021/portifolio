@@ -1,6 +1,6 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Explorer101 } from "@react95/icons";
-import pixelme from "../shared/assets/pixelme.png";
+import pixelme from "../shared/assets/images/pixelme.png";
 
 export default function AboutModal({ id = 'about', nextStep }) {
     const { remove, minimize } = useModal();
