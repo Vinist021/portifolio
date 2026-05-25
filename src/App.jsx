@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Desktop from "./components/desktop";
 import LoadingScreen from "./components/loadingScreen";
+import startSound from "./shared/assets/audios/startSound.mp3";
 
 
 export default function App() {
@@ -13,7 +14,9 @@ export default function App() {
     const timer = setTimeout(() => {
       setShowLoadingScreen(false);
       sessionStorage.setItem("loadingScreenSeen", "false");
-    }, 1);
+      const audio = new Audio(startSound);
+      audio.play().catch(() => {});
+    }, 5000);
     return () => clearTimeout(timer);
   }, [showLoadingScreen]);
 
