@@ -13,10 +13,10 @@ export default function App() {
     if (!showLoadingScreen) return;
     const timer = setTimeout(() => {
       setShowLoadingScreen(false);
-      sessionStorage.setItem("loadingScreenSeen", "false");
+      sessionStorage.setItem("loadingScreenSeen", "true");
       const audio = new Audio(startSound);
       audio.play().catch(() => {});
-    }, 300000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, [showLoadingScreen]);
 
