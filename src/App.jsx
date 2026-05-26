@@ -16,7 +16,7 @@ export default function App() {
       sessionStorage.setItem("loadingScreenSeen", "false");
       const audio = new Audio(startSound);
       audio.play().catch(() => {});
-    }, 5000);
+    }, 300000);
     return () => clearTimeout(timer);
   }, [showLoadingScreen]);
 

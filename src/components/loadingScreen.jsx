@@ -15,8 +15,9 @@ export default function LoadingScreen() {
           alt="Windows 95 logo"
         />
         <div className="flex flex-col items-center gap-[clamp(2px,1vw,6px)]">
-          <div className="flex items-baseline gap-[clamp(6px,2vw,14px)] text-[clamp(30px,7vw,64px)] leading-none text-black">
-            <span className="!font-['Archivo_Black'] sm:text-[100px] text-[50px]">Windows</span>
+          <div className="relative flex items-baseline gap-[clamp(6px,2vw,14px)] text-[clamp(30px,7vw,64px)] leading-none text-black">
+            <span className="!font-['Archivo'] text-white text-[30px] sm:text-[50px] absolute -top-8 left-0">Microsoft</span>
+            <span className="!font-['Archivo_Black'] sm:text-[100px] text-[50px] ml-[90px]">Windows</span>
             <span className="!font-['Archivo'] font-extralight text-white sm:text-[100px] text-[50px]">95</span>
           </div>
         </div>
