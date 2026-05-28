@@ -1,21 +1,21 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Explorer101, Progman11 } from "@react95/icons";
-
-export default function TechnologiesModal({ id = 'technologies', nextStep }) {
+export default function TechnologiesModal({ id = 'technologies', onClose }) {
     const { remove, minimize } = useModal();
 
     const handleClose = () => {
         minimize(id);
         remove(id);
+        if (onClose) onClose();
     };
 
-    const handleNextStep = () => nextStep();
+    const handleButtonClick = (e) => alert(e.currentTarget.value);
 
     return (
-        <Modal id={id} icon={<Progman11 variant="32x32_4" />} title="Tecnologias" dragOptions={{
+        <Modal id={id} icon={<Progman11 variant="32x32_4"/>} title="Tecnologias" dragOptions={{
             defaultPosition: {
-                x: 250,
-                y: 100
+                x: 350,
+                y: 150
             }
         }} titleBarOptions={
             <>
@@ -24,11 +24,11 @@ export default function TechnologiesModal({ id = 'technologies', nextStep }) {
             </>
         } buttons={[{
             value: 'Próximo',
-            onClick: handleNextStep
+            onClick: handleButtonClick
         },]}>
             <Modal.Content width="400px" height="300px" boxShadow="$in" bgColor="white">
                 <Frame as="div" display="flex" flexDirection="column" gap="8px">
-
+                    <h4 className="mt-1 text-center text-2xl">Tecnologias</h4>
                 </Frame>
             </Modal.Content>
         </Modal>

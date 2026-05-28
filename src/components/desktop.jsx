@@ -6,11 +6,13 @@ import AboutModal from "./modals/aboutModal";
 import DesktopIcons from "./desktopIcons";
 import DesktopTaskBar from "./desktopTaskBar";
 import ExperienceModal from "./modals/experienceModal";
+import TechnologiesModal from "./modals/technologiesModal";
 
 export default function Desktop() {
 
     const { add, restore, focus } = useModal();
     const [showExperience, setShowExperience] = useState(false);
+    const [showTechnologies, setShowTechnologies] = useState(false);
 
     const handleOpenAboutModal = () => {
         add({
@@ -27,16 +29,24 @@ export default function Desktop() {
         setShowExperience(true);
     };
 
+    const handleOpenTechnologiesModal = () => {
+        setShowTechnologies(true);
+    };
+
     return (
         <>
             <DesktopTaskBar openAboutModal={handleOpenAboutModal} openExperienceModal={handleOpenExperienceModal} />
 
-            <DesktopIcons openAboutModal={handleOpenAboutModal} openExperienceModal={handleOpenExperienceModal} />
-
+            <DesktopIcons 
+              openAboutModal={handleOpenAboutModal} 
+              openExperienceModal={handleOpenExperienceModal} 
+              openTechnologiesModal={handleOpenTechnologiesModal} 
+            />
+            
             <AboutModal id={modals.about} nextStep={handleOpenExperienceModal} />
-            {showExperience && (
-                <ExperienceModal id={modals.experience} onClose={() => setShowExperience(false)} />
-            )}
+
+            {showExperience && (<ExperienceModal id={modals.experience} onClose={() => setShowExperience(false)} />)}
+            {showTechnologies && (<TechnologiesModal id={modals.tecnologies} onClose={() => setShowTechnologies(false)} />)}
         </>
     )
 }

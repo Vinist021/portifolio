@@ -3,7 +3,7 @@ import xp from "../shared/assets/images/xp.png"
 
 import { Explorer101, Ie, Progman1, Progman11 } from "@react95/icons";
 
-export default function DesktopIcons({ openAboutModal, openExperienceModal }) {
+export default function DesktopIcons({ openAboutModal, openExperienceModal, openTechnologiesModal }) {
     return (
         <>
             <div style={{ width: 100, marginLeft: 10, marginTop: 10 }}>
@@ -44,7 +44,7 @@ export default function DesktopIcons({ openAboutModal, openExperienceModal }) {
                     </p>
                 </div>
 
-                <div className={Cursor.Pointer} onClick={() => openAboutModal()}>
+                <div className={Cursor.Pointer} onClick={() => openTechnologiesModal()}>
                     <Progman11
                         variant="32x32_4"
                         style={{ marginLeft: 32, marginTop: 15 }}
