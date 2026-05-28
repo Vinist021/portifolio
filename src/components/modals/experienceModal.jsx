@@ -1,6 +1,6 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Explorer101 } from "@react95/icons";
-import xp from '../shared/assets/images/xp.png'
+import xp from '../../shared/assets/images/xp.png'
 
 export default function ExperienceModal({ id = 'experience', onClose }) {
     const { remove, minimize } = useModal();
