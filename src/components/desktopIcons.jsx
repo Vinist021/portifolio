@@ -1,7 +1,7 @@
 import { Cursor } from "@react95/core"
 import xp from "../shared/assets/images/xp.png"
 
-import { Explorer101 } from "@react95/icons";
+import { Explorer101, Ie, Progman1, Progman11 } from "@react95/icons";
 
 export default function DesktopIcons({ openAboutModal, openExperienceModal }) {
     return (
@@ -28,7 +28,7 @@ export default function DesktopIcons({ openAboutModal, openExperienceModal }) {
                 </div>
 
                 <div className={Cursor.Pointer} onClick={() => openExperienceModal()}>
-                    <img src={xp} alt="experiência" width="40px" style={{ marginLeft: 26, marginTop: 0 }}/>
+                    <img src={xp} alt="experiência" width="40px" style={{ marginLeft: 26, marginTop: 0 }} />
                     <p
                         style={{
                             fontFamily: "MS Sans Serif",
@@ -41,6 +41,26 @@ export default function DesktopIcons({ openAboutModal, openExperienceModal }) {
                         }}
                     >
                         Experiência
+                    </p>
+                </div>
+
+                <div className={Cursor.Pointer} onClick={() => openAboutModal()}>
+                    <Progman11
+                        variant="32x32_4"
+                        style={{ marginLeft: 32, marginTop: 15 }}
+                    />
+                    <p
+                        style={{
+                            fontFamily: "MS Sans Serif",
+                            fontSize: 13,
+                            justifyContent: "center",
+                            marginTop: 5,
+                            width: 100,
+                            textAlign: "center",
+                            color: "black",
+                        }}
+                    >
+                        Tecnologias
                     </p>
                 </div>
             </div>
