@@ -14,8 +14,8 @@ export default function TechnologiesModal({ id = 'technologies', onClose }) {
     return (
         <Modal id={id} icon={<Progman11 variant="32x32_4"/>} title="Tecnologias" dragOptions={{
             defaultPosition: {
-                x: 350,
-                y: 150
+                x: 450,
+                y: 200
             }
         }} titleBarOptions={
             <>

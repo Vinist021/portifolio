@@ -45,7 +45,7 @@ export default function Desktop() {
             
             <AboutModal id={modals.about} nextStep={handleOpenExperienceModal} />
 
-            {showExperience && (<ExperienceModal id={modals.experience} onClose={() => setShowExperience(false)} />)}
+            {showExperience && (<ExperienceModal id={modals.experience} nextStep={handleOpenTechnologiesModal} onClose={() => setShowExperience(false)} />)}
             {showTechnologies && (<TechnologiesModal id={modals.tecnologies} onClose={() => setShowTechnologies(false)} />)}
         </>
     )

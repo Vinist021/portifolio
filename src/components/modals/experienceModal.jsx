@@ -2,7 +2,7 @@ import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Explorer101 } from "@react95/icons";
 import xp from '../../shared/assets/images/xp.png'
 
-export default function ExperienceModal({ id = 'experience', onClose }) {
+export default function ExperienceModal({ id = 'experience', onClose, nextStep }) {
     const { remove, minimize } = useModal();
 
     const handleClose = () => {
@@ -11,7 +11,7 @@ export default function ExperienceModal({ id = 'experience', onClose }) {
         if (onClose) onClose();
     };
 
-    const handleButtonClick = (e) => alert(e.currentTarget.value);
+    const handleNextStep = () => nextStep();
 
     return (
         <Modal id={id} icon={<><img src={xp} alt="xp" width="20px" height="16px" style={{ marginRight: 3 }}/></>} title="Experiência" dragOptions={{
@@ -26,7 +26,7 @@ export default function ExperienceModal({ id = 'experience', onClose }) {
             </>
         } buttons={[{
             value: 'Próximo',
-            onClick: handleButtonClick
+            onClick: handleNextStep
         },]}>
             <Modal.Content width="400px" height="300px" boxShadow="$in" bgColor="white">
                 <Frame as="div" display="flex" flexDirection="column" gap="8px">
