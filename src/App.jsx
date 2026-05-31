@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import { AGENTS, ClippyProvider } from "@react95/clippy";
 import Desktop from "./components/desktop";
 import LoadingScreen from "./components/loadingScreen";
 import startSound from "./shared/assets/audios/startSound.mp3";
@@ -23,6 +24,7 @@ export default function App() {
   return (
     <>
       {showLoadingScreen && <LoadingScreen />}
+      {!showLoadingScreen && <ClippyProvider agentName={AGENTS.ROVER} />}
       <Desktop />
     </>
   );
