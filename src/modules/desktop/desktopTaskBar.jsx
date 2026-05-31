@@ -1,6 +1,6 @@
 import { Explorer101 } from "@react95/icons"
 import { TaskBar, List } from "@react95/core"
-import xp from "../shared/assets/images/xp.png"
+import xp from "../../assets/images/xp.png"
 
 export default function DesktopTaskBar({ openAboutModal, openExperienceModal }) {
 

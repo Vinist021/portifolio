@@ -1,7 +1,7 @@
 import { Cursor } from "@react95/core"
-import xp from "../shared/assets/images/xp.png"
+import xp from "../../assets/images/xp.png"
 
-import { Explorer101, Ie, Progman1, Progman11 } from "@react95/icons";
+import { Explorer101, Progman11 } from "@react95/icons";
 
 export default function DesktopIcons({ openAboutModal, openExperienceModal, openTechnologiesModal }) {
     return (

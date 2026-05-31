@@ -1,12 +1,12 @@
 import { useModal } from "@react95/core";
 import { useState } from "react";
 import { Explorer101 } from "@react95/icons";
-import { modals } from "../shared/utils/modals";
-import AboutModal from "./modals/aboutModal";
+import { modals } from "../../shared/utils/modals"
+import AboutModal from "../modals/aboutModal";
 import DesktopIcons from "./desktopIcons";
 import DesktopTaskBar from "./desktopTaskBar";
-import ExperienceModal from "./modals/experienceModal";
-import TechnologiesModal from "./modals/technologiesModal";
+import ExperienceModal from "../modals/experienceModal";
+import TechnologiesModal from "../modals/technologiesModal";
 
 export default function Desktop() {
 
