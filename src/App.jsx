@@ -1,9 +1,10 @@
 
 import { useEffect, useState } from "react";
 import { AGENTS, ClippyProvider } from "@react95/clippy";
-import Desktop from "./components/desktop";
-import LoadingScreen from "./components/loadingScreen";
-import startSound from "./shared/assets/audios/startSound.mp3";
+import Desktop from "./modules/desktop/desktop";
+import LoadingScreen from "./modules/loadingScreen/loadingScreen";
+import startSound from "./assets/audios/startSound.mp3";
+import RoverWelcome from "./modules/rover/roverWelcome";
 
 
 export default function App() {
@@ -24,7 +25,11 @@ export default function App() {
   return (
     <>
       {showLoadingScreen && <LoadingScreen />}
-      {!showLoadingScreen && <ClippyProvider agentName={AGENTS.ROVER} />}
+      {!showLoadingScreen && (
+        <ClippyProvider agentName={AGENTS.ROVER}>
+          <RoverWelcome />
+        </ClippyProvider>
+      )}
       <Desktop />
     </>
   );
