@@ -35,7 +35,10 @@ export default function Desktop() {
 
     return (
         <>
-            <DesktopTaskBar openAboutModal={handleOpenAboutModal} openExperienceModal={handleOpenExperienceModal} />
+            <DesktopTaskBar openAboutModal={handleOpenAboutModal}
+             openExperienceModal={handleOpenExperienceModal} 
+             openTechnologiesModal={handleOpenTechnologiesModal} 
+            />
 
             <DesktopIcons 
               openAboutModal={handleOpenAboutModal} 
