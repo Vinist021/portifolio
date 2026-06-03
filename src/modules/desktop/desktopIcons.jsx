@@ -7,7 +7,7 @@ export default function DesktopIcons({ openAboutModal, openExperienceModal, open
     return (
         <>
             <div style={{ width: 100, marginLeft: 10, marginTop: 10 }}>
-                <div className={Cursor.Pointer} onClick={() => openAboutModal()}>
+                <div className={Cursor.Pointer} onClick={openAboutModal}>
                     <Explorer101
                         variant="32x32_4"
                         style={{ marginLeft: 32, marginTop: 15 }}
@@ -27,7 +27,7 @@ export default function DesktopIcons({ openAboutModal, openExperienceModal, open
                     </p>
                 </div>
 
-                <div className={Cursor.Pointer} onClick={() => openExperienceModal()}>
+                <div className={Cursor.Pointer} onClick={openExperienceModal}>
                     <img src={xp} alt="experiência" width="40px" style={{ marginLeft: 26, marginTop: 0 }} />
                     <p
                         style={{
@@ -44,7 +44,7 @@ export default function DesktopIcons({ openAboutModal, openExperienceModal, open
                     </p>
                 </div>
 
-                <div className={Cursor.Pointer} onClick={() => openTechnologiesModal()}>
+                <div className={Cursor.Pointer} onClick={openTechnologiesModal}>
                     <Progman11
                         variant="32x32_4"
                         style={{ marginLeft: 32, marginTop: 15 }}

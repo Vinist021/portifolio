@@ -1,5 +1,6 @@
 import loadingBackground from "../../assets/images/loadingBackground.png";
 import winLogo from "../../assets/images/winLogo.png";
+import { colors } from "./utils/colors.js";
 
 export default function LoadingScreen() {
   return (
@@ -27,19 +28,7 @@ export default function LoadingScreen() {
         <div className="relative h-[clamp(18px,2.6vw,26px)] w-full">
           <div className="absolute inset-0 overflow-hidden bg-[#AFB8C0]">
             <div className="absolute left-0 top-0 h-full w-5/7 flex animate-[win95-slide_4.0s_steps(12,start)_infinite] motion-reduce:animate-none will-change-transform">
-              {[
-                '#98AFBF',
-                '#88A7BF',
-                '#7898BF',
-                '#6F90B8',
-                '#5F88B8',
-                '#4F7FB8',
-                '#5F88B8',
-                '#6F90B8',
-                '#7898BF',
-                '#88A7BF',
-                '#98AFBF',
-              ].map((color, idx) => (
+              {colors.map((color, idx) => (
                 <div
                   key={idx}
                   className="h-full"
