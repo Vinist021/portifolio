@@ -4,7 +4,7 @@ import { AGENTS, ClippyProvider } from "@react95/clippy";
 import Desktop from "./modules/desktop/desktop";
 import LoadingScreen from "./modules/loadingScreen/loadingScreen";
 import startSound from "./assets/audios/startSound.mp3";
-import RoverWelcome from "./modules/rover/roverWelcome";
+import Rover from "./modules/rover/rover";
 
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
       {showLoadingScreen && <LoadingScreen />}
       {!showLoadingScreen && (
         <ClippyProvider agentName={AGENTS.ROVER}>
-          <RoverWelcome />
+          <Rover/>
         </ClippyProvider>
       )}
       <Desktop />
