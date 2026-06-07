@@ -8,6 +8,26 @@ export default function Rover() {
   const { clippy } = useClippy();
   const hasPlayedRef = useRef(false);
 
+  const animations = clippy?.animations() || [];
+
+  useEffect(() => {
+    if (!clippy) return;
+
+    const handleDoubleClick = () => {
+      const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+
+      if (randomAnimation) {
+        clippy.play(randomAnimation);
+      }
+    };
+
+    clippy._el?.addEventListener("dblclick", handleDoubleClick);
+
+    return () => {
+      clippy._el?.removeEventListener("dblclick", handleDoubleClick);
+    };
+  }, [clippy, animations]);
+
   useEffect(() => {
     if (!clippy || hasPlayedRef.current) return;
     hasPlayedRef.current = true;
