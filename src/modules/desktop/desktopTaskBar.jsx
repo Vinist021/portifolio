@@ -1,8 +1,8 @@
-import { Explorer101, Progman11 } from "@react95/icons"
+import { Explorer101, Progman11, Awschd32400 } from "@react95/icons"
 import { TaskBar, List } from "@react95/core"
 import xp from "../../assets/images/xp.png"
 
-export default function DesktopTaskBar({ openAboutModal, openExperienceModal, openTechnologiesModal }) {
+export default function DesktopTaskBar({ openAboutModal, openExperienceModal, openTechnologiesModal, openCVModal }) {
 
     return (
         <TaskBar list={
@@ -18,6 +18,9 @@ export default function DesktopTaskBar({ openAboutModal, openExperienceModal, op
                 </List.Item>
                 <List.Item icon={<Progman11 variant="32x32_4" />} onClick={openTechnologiesModal}>
                     Tecnologias
+                </List.Item>
+                <List.Item icon={<Awschd32400 variant="32x32_4" />} onClick={openCVModal}>
+                    CV
                 </List.Item>
             </List>
         } />

@@ -1,6 +1,7 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
-import { Explorer101, Progman11 } from "@react95/icons";
-export default function TechnologiesModal({ id = 'technologies', onClose, nextStep }) {
+import { Awschd32400, Explorer101 } from "@react95/icons";
+
+export default function CVModal({ id = 'cv', onClose }) {
     const { remove, minimize } = useModal();
 
     const handleClose = () => {
@@ -9,13 +10,13 @@ export default function TechnologiesModal({ id = 'technologies', onClose, nextSt
         if (onClose) onClose();
     };
 
-    const handleNextStep = () => nextStep();
+    const handleButtonClick = (e) => alert(e.currentTarget.value);
 
     return (
-        <Modal id={id} icon={<Progman11 variant="32x32_4"/>} title="Tecnologias" dragOptions={{
+        <Modal id={id} icon={<Awschd32400 variant="32x32_4" />} title="Curriculum Vitae" dragOptions={{
             defaultPosition: {
-                x: 450,
-                y: 200
+                x: 550,
+                y: 250
             }
         }} titleBarOptions={
             <>
@@ -24,11 +25,11 @@ export default function TechnologiesModal({ id = 'technologies', onClose, nextSt
             </>
         } buttons={[{
             value: 'Próximo',
-            onClick: handleNextStep
+            onClick: handleButtonClick
         },]}>
             <Modal.Content width="400px" height="300px" boxShadow="$in" bgColor="white">
                 <Frame as="div" display="flex" flexDirection="column" gap="8px">
-                    <h4 className="mt-1 text-center text-2xl">Tecnologias</h4>
+                    <h4 className="mt-1 text-center text-2xl">Curriculum Vitae</h4>
                 </Frame>
             </Modal.Content>
         </Modal>
