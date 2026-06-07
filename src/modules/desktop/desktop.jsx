@@ -34,7 +34,7 @@ export default function Desktop() {
     };
 
     return (
-        <>
+        <div className="select-none">
             <DesktopTaskBar openAboutModal={handleOpenAboutModal}
              openExperienceModal={handleOpenExperienceModal} 
              openTechnologiesModal={handleOpenTechnologiesModal} 
@@ -50,6 +50,6 @@ export default function Desktop() {
 
             {showExperience && (<ExperienceModal id={modals.experience} nextStep={handleOpenTechnologiesModal} onClose={() => setShowExperience(false)} />)}
             {showTechnologies && (<TechnologiesModal id={modals.tecnologies} onClose={() => setShowTechnologies(false)} />)}
-        </>
+        </div>
     )
 }
