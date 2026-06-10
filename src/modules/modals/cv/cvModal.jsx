@@ -1,6 +1,7 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Awschd32400, Explorer101 } from "@react95/icons";
 import CVComponent from "./components/cvPage";
+import viniciusCV from '../../../assets/documents/cv.pdf';
 
 export default function CVModal({ id = 'cv', onClose }) {
     const { remove, minimize } = useModal();
@@ -11,7 +12,9 @@ export default function CVModal({ id = 'cv', onClose }) {
         if (onClose) onClose();
     };
 
-    const handleButtonClick = (e) => alert(e.currentTarget.value);
+const handleButtonClick = () => {
+  window.open(viniciusCV, '_blank');
+};
 
     return (
         <Modal id={id} icon={<Awschd32400 variant="32x32_4" />} title="Curriculum Vitae" dragOptions={{
@@ -25,7 +28,7 @@ export default function CVModal({ id = 'cv', onClose }) {
                 <TitleBar.Close onClick={handleClose} className="cursor-default" />
             </>
         } buttons={[{
-            value: 'Próximo',
+            value: 'Visualizar',
             onClick: handleButtonClick
         },]}>
             <Modal.Content
