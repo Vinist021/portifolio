@@ -1,23 +1,22 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Explorer101 } from "@react95/icons";
-import xp from '../../assets/images/xp.png'
+import pixelme from "../../../assets/images/pixelme.png";
 
-export default function ExperienceModal({ id = 'experience', onClose, nextStep }) {
+export default function AboutModal({ id = 'about', nextStep }) {
     const { remove, minimize } = useModal();
 
     const handleClose = () => {
         minimize(id);
         remove(id);
-        if (onClose) onClose();
     };
 
     const handleNextStep = () => nextStep();
 
     return (
-        <Modal id={id} icon={<><img src={xp} alt="xp" width="20px" height="16px" style={{ marginRight: 3 }}/></>} title="Experiência" dragOptions={{
+        <Modal id={id} icon={<Explorer101 variant="32x32_4" />} title="Sobre" dragOptions={{
             defaultPosition: {
-                x: 350,
-                y: 150
+                x: 250,
+                y: 100
             }
         }} titleBarOptions={
             <>
@@ -30,7 +29,14 @@ export default function ExperienceModal({ id = 'experience', onClose, nextStep }
         },]}>
             <Modal.Content width="400px" height="300px" boxShadow="$in" bgColor="white">
                 <Frame as="div" display="flex" flexDirection="column" gap="8px">
-                    <h4 className="mt-1 text-center text-2xl">Experiência</h4>
+                    <h4 className="mt-1 text-center text-2xl">Vinicius Teixeira</h4>
+                    <div className="flex items-start gap-4">
+                        <img src={pixelme} height="250px" width="210px" alt="Vinicius Teixeira" className="mt-[-30px] ms-[-25px]" />
+                        <div>
+                            <p className="text-[0.90rem]">Sou um desenvolvedor fullstack apaixonado por transformar ideias em produtos digitais eficientes, unindo performance, criatividade e uma boa experiência ao usuário</p>
+                        </div>
+                    </div>
+
                 </Frame>
             </Modal.Content>
         </Modal>

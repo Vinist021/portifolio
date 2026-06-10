@@ -2,12 +2,12 @@ import { useModal } from "@react95/core";
 import { useState } from "react";
 import { Explorer101 } from "@react95/icons";
 import { modals } from "../../shared/utils/modals"
-import AboutModal from "../modals/aboutModal";
+import AboutModal from "../modals/about/aboutModal";
 import DesktopIcons from "./desktopIcons";
 import DesktopTaskBar from "./desktopTaskBar";
-import ExperienceModal from "../modals/experienceModal";
-import TechnologiesModal from "../modals/technologiesModal";
-import CVModal from "../modals/cvModal";
+import ExperienceModal from "../modals/experience/experienceModal";
+import TechnologiesModal from "../modals/technologies/technologiesModal";
+import CVModal from "../modals/cv/cvModal";
 
 export default function Desktop() {
 
