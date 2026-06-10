@@ -1,5 +1,6 @@
 import { Modal, Frame, TitleBar, useModal } from "@react95/core";
 import { Awschd32400, Explorer101 } from "@react95/icons";
+import CVComponent from "./components/cvPage";
 
 export default function CVModal({ id = 'cv', onClose }) {
     const { remove, minimize } = useModal();
@@ -16,7 +17,7 @@ export default function CVModal({ id = 'cv', onClose }) {
         <Modal id={id} icon={<Awschd32400 variant="32x32_4" />} title="Curriculum Vitae" dragOptions={{
             defaultPosition: {
                 x: 550,
-                y: 250
+                y: 0
             }
         }} titleBarOptions={
             <>
@@ -27,9 +28,15 @@ export default function CVModal({ id = 'cv', onClose }) {
             value: 'Próximo',
             onClick: handleButtonClick
         },]}>
-            <Modal.Content width="400px" height="300px" boxShadow="$in" bgColor="white">
-                <Frame as="div" display="flex" flexDirection="column" gap="8px">
-                    <h4 className="mt-1 text-center text-2xl">Curriculum Vitae</h4>
+            <Modal.Content
+                width="min(92vw, 800px)"
+                height="min(88vh, 780px)"
+                boxShadow="$in"
+                bgColor="white"
+                style={{ overflowY: 'auto', overflowX: 'hidden' }}
+            >
+                <Frame as="div" display="flex" flexDirection="column" gap="8px" height="100%" minHeight="0">
+                    <CVComponent />
                 </Frame>
             </Modal.Content>
         </Modal>

@@ -6,7 +6,6 @@ import LoadingScreen from "./modules/loadingScreen/loadingScreen";
 import startSound from "./assets/audios/startSound.mp3";
 import Rover from "./modules/rover/rover";
 
-
 export default function App() {
   const hasSeenLoadingScreen = sessionStorage.getItem("loadingScreenSeen") === "true";
   const [showLoadingScreen, setShowLoadingScreen] = useState(!hasSeenLoadingScreen);
