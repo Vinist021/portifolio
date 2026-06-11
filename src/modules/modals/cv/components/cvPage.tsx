@@ -1,3 +1,4 @@
+import { Mail } from "../../../../shared/icons/email";
 import { Github } from "../../../../shared/icons/github";
 import { Linkedin } from "../../../../shared/icons/linkedin";
 
@@ -67,7 +68,7 @@ export default function CVComponent({ data = defaultCVData }) {
               </div>
 
               <div className="flex items-center gap-3">
-                {/* <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" /> */}
+                <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
                 <a
                   href={`mailto:${data.email}`}
                   className="text-sm hover:text-blue-600 transition-colors duration-200"
