@@ -1,6 +1,7 @@
 import { Mail } from "../../../../shared/icons/email";
 import { Github } from "../../../../shared/icons/github";
 import { Linkedin } from "../../../../shared/icons/linkedin";
+import { Phone } from "../../../../shared/icons/phone";
 
 const defaultCVData = {
   name: 'Vinicius Teixeira',
@@ -63,12 +64,12 @@ export default function CVComponent({ data = defaultCVData }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 text-gray-700">
               <div className="flex items-center gap-3">
-                {/* <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" /> */}
+                <Phone className="w-5 h-5 flex-shrink-0" />
                 <span className="text-sm">{data.phone}</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                <Mail className="w-5 h-5 flex-shrink-0" />
                 <a
                   href={`mailto:${data.email}`}
                   className="text-sm hover:text-blue-600 transition-colors duration-200"
@@ -78,7 +79,7 @@ export default function CVComponent({ data = defaultCVData }) {
               </div>
 
               <div className="flex items-center gap-3 md:col-span-2">
-                 <Linkedin className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                 <Linkedin className="w-5 h-5 flex-shrink-0" />
                 <a
                   href={data.linkedinUrl}
                   target="_blank"
@@ -90,7 +91,7 @@ export default function CVComponent({ data = defaultCVData }) {
               </div>
 
               <div className="flex items-center gap-3 md:col-span-2">
-                 <Github className="w-5 h-5 text-black-600 flex-shrink-0" />
+                 <Github className="w-5 h-5 flex-shrink-0" />
                 <a
                   href={data.githubUrl}
                   target="_blank"
