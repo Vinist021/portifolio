@@ -1,4 +1,5 @@
-import { GitHub } from "../../../../shared/icons/github";
+import { Github } from "../../../../shared/icons/github";
+import { Linkedin } from "../../../../shared/icons/linkedin";
 
 const defaultCVData = {
   name: 'Vinicius Teixeira',
@@ -76,7 +77,7 @@ export default function CVComponent({ data = defaultCVData }) {
               </div>
 
               <div className="flex items-center gap-3 md:col-span-2">
-                {/* <Linkedin className="w-5 h-5 text-blue-600 flex-shrink-0" /> */}
+                 <Linkedin className="w-5 h-5 text-blue-600 flex-shrink-0" />
                 <a
                   href={data.linkedinUrl}
                   target="_blank"
@@ -88,7 +89,7 @@ export default function CVComponent({ data = defaultCVData }) {
               </div>
 
               <div className="flex items-center gap-3 md:col-span-2">
-                 <GitHub className="w-5 h-5 text-black-600 flex-shrink-0" />
+                 <Github className="w-5 h-5 text-black-600 flex-shrink-0" />
                 <a
                   href={data.githubUrl}
                   target="_blank"

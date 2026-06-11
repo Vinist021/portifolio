@@ -1,4 +1,4 @@
-export function GitHub(props) {
+export function Github(props) {
   return (
     <svg
       viewBox="0 0 20 20"
