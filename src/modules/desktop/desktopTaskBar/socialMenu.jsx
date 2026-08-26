@@ -1,9 +1,7 @@
-import { Explorer101, Awschd32400, Wab321019 } from "@react95/icons"
-import { TaskBar, List } from "@react95/core"
 import { useState } from "react"
-// import xp from "../../assets/images/xp.png"
+import { useMediaQuery } from "../../../shared/hooks/useMediaQuery"
 import { ListItem } from "@react95/core/ListItem"
-import { useMediaQuery } from "../../shared/hooks/useMediaQuery"
+import { List } from "@react95/core"
 
   const socials = [
     {
@@ -18,7 +16,7 @@ import { useMediaQuery } from "../../shared/hooks/useMediaQuery"
     },
   ];
 
-function SocialMenu() {
+export default function SocialMenu() {
     const isMobile = useMediaQuery("(max-width: 767px)");
     const [isOpen, setIsOpen] = useState(false);
 
@@ -50,35 +48,4 @@ function SocialMenu() {
             </List>
         </List.Item>
     );
-}
-
-export default function DesktopTaskBar({
-    openAboutModal,
-    // openExperienceModal,
-    // openTechnologiesModal,
-    openCVModal
-}) {
-
-    return (
-        <TaskBar className="desktop-taskbar" list={
-            <List className="desktop-start-menu" width="225px">
-                <SocialMenu />
-                <List.Item icon={<Explorer101 variant="32x32_4" />} onClick={openAboutModal}>
-                    Sobre
-                </List.Item>
-                {/* <List.Item
-                  style={{ paddingInlineStart: 5 }}
-                  icon={<img src={xp} alt="Experiência" width="38px" height="32px" style={{ marginRight: 5 }} />}
-                  onClick={openExperienceModal}>
-                    Experiência
-                </List.Item> */}
-                {/* <List.Item icon={<Progman11 variant="32x32_4" />} onClick={openTechnologiesModal}>
-                    Tecnologias
-                </List.Item> */}
-                <List.Item icon={<Awschd32400 variant="32x32_4" />} onClick={openCVModal}>
-                    CV
-                </List.Item>
-            </List>
-        } />
-    )
 }
