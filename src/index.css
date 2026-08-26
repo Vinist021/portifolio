@@ -173,6 +173,20 @@ a {
   }
 
   .responsive-modal.responsive-modal--about {
+    top: calc(
+      (
+          max(var(--desktop-safe-gap), env(safe-area-inset-top)) + 100vh -
+            var(--desktop-taskbar-height) -
+            max(var(--desktop-safe-gap), env(safe-area-inset-bottom))
+        ) / 2
+    ) !important;
+    top: calc(
+      (
+          max(var(--desktop-safe-gap), env(safe-area-inset-top)) + 100dvh -
+            var(--desktop-taskbar-height) -
+            max(var(--desktop-safe-gap), env(safe-area-inset-bottom))
+        ) / 2
+    ) !important;
     width: min(
       404px,
       calc(
@@ -191,6 +205,7 @@ a {
         max(var(--desktop-safe-gap), env(safe-area-inset-top)) -
         max(var(--desktop-safe-gap), env(safe-area-inset-bottom))
     );
+    translate: 0 -50% !important;
   }
 
   .responsive-modal > .draggable {
