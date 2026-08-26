@@ -8,12 +8,16 @@ export default function Rover() {
   const { clippy } = useClippy();
   const hasPlayedRef = useRef(false);
 
-  const animations = clippy?.animations() || [];
-
   useEffect(() => {
     if (!clippy) return;
 
+    const agentElement = clippy._el;
+    const balloonElement = clippy._balloon?._balloon;
+    agentElement?.classList.add("rover-agent");
+    balloonElement?.classList.add("rover-balloon");
+
     const handleDoubleClick = () => {
+      const animations = clippy.animations() || [];
       const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
 
       if (randomAnimation) {
@@ -21,12 +25,14 @@ export default function Rover() {
       }
     };
 
-    clippy._el?.addEventListener("dblclick", handleDoubleClick);
+    agentElement?.addEventListener("dblclick", handleDoubleClick);
 
     return () => {
-      clippy._el?.removeEventListener("dblclick", handleDoubleClick);
+      agentElement?.removeEventListener("dblclick", handleDoubleClick);
+      agentElement?.classList.remove("rover-agent");
+      balloonElement?.classList.remove("rover-balloon");
     };
-  }, [clippy, animations]);
+  }, [clippy]);
 
   useEffect(() => {
     if (!clippy || hasPlayedRef.current) return;

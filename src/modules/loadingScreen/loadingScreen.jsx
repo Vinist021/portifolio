@@ -24,7 +24,7 @@ export default function LoadingScreen() {
         </div>
       </div>
       
-      <div className="fixed bottom-0 left-0 z-[60] w-full">
+      <div className="fixed bottom-0 left-0 z-[60] w-full bg-[#AFB8C0] pb-[env(safe-area-inset-bottom)]">
         <div className="relative h-[clamp(18px,2.6vw,26px)] w-full">
           <div className="absolute inset-0 overflow-hidden bg-[#AFB8C0]">
             <div className="absolute left-0 top-0 h-full w-5/7 flex animate-[win95-slide_4.0s_steps(12,start)_infinite] motion-reduce:animate-none will-change-transform">
