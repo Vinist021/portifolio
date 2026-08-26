@@ -145,6 +145,18 @@ a {
     --desktop-taskbar-height: 44px;
   }
 
+  html,
+  body,
+  #root {
+    background-color: #000;
+  }
+
+  .desktop-surface {
+    min-height: calc(100vh - env(safe-area-inset-bottom));
+    min-height: calc(100dvh - env(safe-area-inset-bottom));
+    background-color: #55AAAA;
+  }
+
   .desktop-icons {
     width: 104px;
     gap: 2px;
@@ -245,8 +257,9 @@ a {
   }
 
   .desktop-taskbar {
-    height: calc(var(--desktop-taskbar-height) + env(safe-area-inset-bottom)) !important;
-    padding-bottom: calc(2px + env(safe-area-inset-bottom)) !important;
+    bottom: env(safe-area-inset-bottom) !important;
+    height: var(--desktop-taskbar-height) !important;
+    padding-bottom: 2px !important;
   }
 
   .desktop-taskbar > div:first-child {
@@ -296,7 +309,7 @@ a {
   .rover-agent {
     top: auto !important;
     right: max(8px, env(safe-area-inset-right)) !important;
-    bottom: calc(var(--desktop-taskbar-height) + max(8px, env(safe-area-inset-bottom))) !important;
+    bottom: calc(var(--desktop-taskbar-height) + env(safe-area-inset-bottom) + 8px) !important;
     left: auto !important;
     touch-action: manipulation;
   }
