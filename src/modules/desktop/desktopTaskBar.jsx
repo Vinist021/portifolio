@@ -1,7 +1,9 @@
 import { Explorer101, Awschd32400, Wab321019 } from "@react95/icons"
 import { TaskBar, List } from "@react95/core"
+import { useState } from "react"
 // import xp from "../../assets/images/xp.png"
 import { ListItem } from "@react95/core/ListItem"
+import { useMediaQuery } from "../../shared/hooks/useMediaQuery"
 
   const socials = [
     {
@@ -16,6 +18,40 @@ import { ListItem } from "@react95/core/ListItem"
     },
   ];
 
+function SocialMenu() {
+    const isMobile = useMediaQuery("(max-width: 767px)");
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleSocialClick = (event) => {
+        const clickedItem = event.target instanceof Element
+            ? event.target.closest("li")
+            : null;
+
+        if (!isMobile || clickedItem !== event.currentTarget) return;
+
+        event.stopPropagation();
+        setIsOpen((currentValue) => !currentValue);
+    };
+
+    return (
+        <List.Item
+            icon={<Wab321019 variant="32x32_4" />}
+            aria-haspopup="menu"
+            aria-expanded={isMobile ? isOpen : undefined}
+            onClick={handleSocialClick}
+        >
+            Social
+            <List style={isMobile ? { display: isOpen ? "block" : "none" } : undefined}>
+                {socials.map((social) => (
+                    <ListItem key={social.id} onClick={() => window.open(social.url, "_blank")}>
+                        {social.name}
+                    </ListItem>
+                ))}
+            </List>
+        </List.Item>
+    );
+}
+
 export default function DesktopTaskBar({
     openAboutModal,
     // openExperienceModal,
@@ -26,16 +62,7 @@ export default function DesktopTaskBar({
     return (
         <TaskBar className="desktop-taskbar" list={
             <List className="desktop-start-menu" width="225px">
-                <List.Item icon={<Wab321019 variant="32x32_4" />}>
-                    Social
-                    <List>
-                        {socials.map((social) => (
-                            <ListItem key={social.id} onClick={() => window.open(social.url, "_blank")}>
-                                {social.name}
-                            </ListItem>
-                        ))}
-                    </List>
-                </List.Item>
+                <SocialMenu />
                 <List.Item icon={<Explorer101 variant="32x32_4" />} onClick={openAboutModal}>
                     Sobre
                 </List.Item>
