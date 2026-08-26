@@ -172,6 +172,27 @@ a {
     touch-action: auto !important;
   }
 
+  .responsive-modal.responsive-modal--about {
+    width: min(
+      404px,
+      calc(
+        100vw - max(var(--desktop-safe-gap), env(safe-area-inset-left)) -
+          max(var(--desktop-safe-gap), env(safe-area-inset-right))
+      )
+    ) !important;
+    height: auto !important;
+    max-height: calc(
+      100vh - var(--desktop-taskbar-height) -
+        max(var(--desktop-safe-gap), env(safe-area-inset-top)) -
+        max(var(--desktop-safe-gap), env(safe-area-inset-bottom))
+    );
+    max-height: calc(
+      100dvh - var(--desktop-taskbar-height) -
+        max(var(--desktop-safe-gap), env(safe-area-inset-top)) -
+        max(var(--desktop-safe-gap), env(safe-area-inset-bottom))
+    );
+  }
+
   .responsive-modal > .draggable {
     min-height: 32px;
     flex-shrink: 0;
@@ -192,6 +213,10 @@ a {
     overflow-y: auto !important;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .responsive-modal--about .responsive-modal__content {
+    flex: 0 1 auto;
   }
 
   .responsive-modal > div:last-child:not(.responsive-modal__content) {
