@@ -1,9 +1,14 @@
 import { Cursor } from "@react95/core"
-import xp from "../../assets/images/xp.png"
+// import xp from "../../assets/images/xp.png"
 
-import { Awschd32400, Explorer101, Progman11, Wordpad } from "@react95/icons";
+import { Awschd32400, Explorer101 } from "@react95/icons";
 
-export default function DesktopIcons({ openAboutModal, openExperienceModal, openTechnologiesModal, openCVModal }) {
+export default function DesktopIcons({
+    openAboutModal,
+    // openExperienceModal,
+    // openTechnologiesModal,
+    openCVModal
+}) {
     return (
         <>
             <div style={{ width: 100, marginLeft: 10, marginTop: 10 }}>
@@ -27,7 +32,7 @@ export default function DesktopIcons({ openAboutModal, openExperienceModal, open
                     </p>
                 </div>
 
-                <div className={Cursor.Pointer} onClick={openExperienceModal}>
+                {/* <div className={Cursor.Pointer} onClick={openExperienceModal}>
                     <img src={xp} alt="experiência" width="40px" style={{ marginLeft: 26, marginTop: 0 }} />
                     <p
                         style={{
@@ -42,9 +47,9 @@ export default function DesktopIcons({ openAboutModal, openExperienceModal, open
                     >
                         Experiência
                     </p>
-                </div>
+                </div> */}
 
-                <div className={Cursor.Pointer} onClick={openTechnologiesModal}>
+                {/* <div className={Cursor.Pointer} onClick={openTechnologiesModal}>
                     <Progman11
                         variant="32x32_4"
                         style={{ marginLeft: 32, marginTop: 15 }}
@@ -62,7 +67,7 @@ export default function DesktopIcons({ openAboutModal, openExperienceModal, open
                     >
                         Tecnologias
                     </p>
-                </div>
+                </div> */}
 
                 <div className={Cursor.Pointer} onClick={openCVModal}>
                     <Awschd32400
