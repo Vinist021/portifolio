@@ -21,15 +21,15 @@ const defaultCVData = {
   technologies: [
     {
       category: 'Linguagens',
-      items: ['JavaScript', 'TypeScript', 'Java'],
+      items: ['JavaScript', 'TypeScript'],
     },
     {
       category: 'Frameworks/libs',
-      items: ['Next.js', 'NestJS', 'React', 'SpringBoot'],
+      items: ['Next.js', 'NestJS', 'React'],
     },
     {
       category: 'Bancos de dados',
-      items: ['MySQL', 'PostgreSQL', 'MongoDB'],
+      items: ['MySQL', 'PostgreSQL'],
     },
     {
       category: 'Ferramentas',
@@ -42,7 +42,7 @@ const defaultCVData = {
       position: 'Desenvolvedor Fullstack',
       period: 'Out/2025 - Atual',
       description: [
-        'Atuação na manutenção e desenvolvimento de sistemas de alto valor estratégico, incluindo ERPs e aplicações de alta demanda;',
+        'Atuação na manutenção e desenvolvimento de sistemas de alto valor estratégico, incluindo ERPs, sistemas para laboratórios e outras aplicações de alta demanda;',
         'Desenvolvimento frontend com Next.js e React de interfaces responsivas para mobile e desktop focadas na experiência do usuário;',
         'Desenvolvimento de APIs REST utilizando NestJS com arquitetura hexagonal;',
         'Adoção a boas práticas de programação backend e frontend.',
@@ -133,7 +133,7 @@ export default function CVComponent({ data = defaultCVData }) {
 
           <section className="mb-8">
             <div className="inline-block bg-blue-600 text-white px-8 py-2 rounded-sm font-semibold text-lg mb-4">
-              Tecnologias
+              Principais tecnologias
             </div>
             <ul className="space-y-2 text-gray-800">
               {data.technologies.map((tech, idx) => (
