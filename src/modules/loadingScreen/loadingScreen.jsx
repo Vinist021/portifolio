@@ -6,7 +6,10 @@ export default function LoadingScreen() {
   return (
     <div
       className="fixed inset-0 z-[50] flex items-center justify-center pointer-events-none bg-no-repeat bg-center bg-cover"
-      style={{ backgroundImage: `url(${loadingBackground})` }}
+      style={{
+        backgroundImage: `url(${loadingBackground})`,
+        bottom: "env(safe-area-inset-bottom)",
+      }}
     >
       <div className="flex flex-col items-center gap-[clamp(10px,2.5vw,18px)] p-[clamp(16px,4vw,32px)] text-center">
         <div className="absolute top-0 sm:right-5 right-2 m-4 sm:text-[60px] text-[40px] !font-['Archivo_Black']">Microsoft</div>
@@ -24,7 +27,7 @@ export default function LoadingScreen() {
         </div>
       </div>
       
-      <div className="fixed bottom-0 left-0 z-[60] w-full bg-[#AFB8C0] pb-[env(safe-area-inset-bottom)]">
+      <div className="fixed bottom-[env(safe-area-inset-bottom)] left-0 z-[60] w-full bg-[#AFB8C0]">
         <div className="relative h-[clamp(18px,2.6vw,26px)] w-full">
           <div className="absolute inset-0 overflow-hidden bg-[#AFB8C0]">
             <div className="absolute left-0 top-0 h-full w-5/7 flex animate-[win95-slide_4.0s_steps(12,start)_infinite] motion-reduce:animate-none will-change-transform">
