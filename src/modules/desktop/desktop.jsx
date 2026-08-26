@@ -40,7 +40,7 @@ export default function Desktop() {
     }
 
     return (
-        <div className="select-none">
+        <div className="desktop-surface select-none">
             {/* openExperienceModal={handleOpenExperienceModal} */}
             {/* openTechnologiesModal={handleOpenTechnologiesModal} */}
             <DesktopTaskBar openAboutModal={handleOpenAboutModal} openCVModal={handleOpenCVModal} />

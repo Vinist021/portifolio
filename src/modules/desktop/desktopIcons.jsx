@@ -10,27 +10,20 @@ export default function DesktopIcons({
     openCVModal
 }) {
     return (
-        <>
-            <div style={{ width: 100, marginLeft: 10, marginTop: 10 }}>
-                <div className={Cursor.Pointer} onClick={openAboutModal}>
+        <div className="desktop-icons" role="group" aria-label="Atalhos da área de trabalho">
+                <button
+                    type="button"
+                    className={`${Cursor.Pointer} desktop-icon`}
+                    onClick={openAboutModal}
+                    aria-label="Abrir Sobre"
+                >
                     <Explorer101
                         variant="32x32_4"
-                        style={{ marginLeft: 32, marginTop: 15 }}
                     />
-                    <p
-                        style={{
-                            fontFamily: "MS Sans Serif",
-                            fontSize: 13,
-                            justifyContent: "center",
-                            marginTop: 5,
-                            width: 100,
-                            textAlign: "center",
-                            color: "black",
-                        }}
-                    >
+                    <span className="desktop-icon__label">
                         Sobre
-                    </p>
-                </div>
+                    </span>
+                </button>
 
                 {/* <div className={Cursor.Pointer} onClick={openExperienceModal}>
                     <img src={xp} alt="experiência" width="40px" style={{ marginLeft: 26, marginTop: 0 }} />
@@ -69,26 +62,19 @@ export default function DesktopIcons({
                     </p>
                 </div> */}
 
-                <div className={Cursor.Pointer} onClick={openCVModal}>
+                <button
+                    type="button"
+                    className={`${Cursor.Pointer} desktop-icon`}
+                    onClick={openCVModal}
+                    aria-label="Abrir currículo"
+                >
                     <Awschd32400
                         variant="32x32_4"
-                        style={{ marginLeft: 32, marginTop: 15 }}
                     />
-                    <p
-                        style={{
-                            fontFamily: "MS Sans Serif",
-                            fontSize: 13,
-                            justifyContent: "center",
-                            marginTop: 5,
-                            width: 100,
-                            textAlign: "center",
-                            color: "black",
-                        }}
-                    >
+                    <span className="desktop-icon__label">
                         CV
-                    </p>
-                </div>
-            </div>
-        </>
+                    </span>
+                </button>
+        </div>
     )
 }

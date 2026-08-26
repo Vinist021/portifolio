@@ -24,8 +24,8 @@ export default function DesktopTaskBar({
 }) {
 
     return (
-        <TaskBar list={
-            <List width="225px">
+        <TaskBar className="desktop-taskbar" list={
+            <List className="desktop-start-menu" width="225px">
                 <List.Item icon={<Wab321019 variant="32x32_4" />}>
                     Social
                     <List>
