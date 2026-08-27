@@ -53,7 +53,7 @@ const defaultCVData = {
 
 export default function CVComponent({ data = defaultCVData }) {
   return (
-    <div className="flex w-full items-start justify-center bg-gray-100 p-1.5 sm:p-2 md:p-4">
+    <div className="flex w-full items-start justify-center bg-gray-100 p-0 md:p-4">
       <div className="w-full max-w-5xl bg-white shadow-2xl relative">
         <div className="absolute bottom-0 left-0 top-0 w-3 bg-blue-600 sm:w-6 md:w-12" />
 

@@ -21,14 +21,13 @@ export default function App() {
     return () => clearTimeout(timer);
   }, [showLoadingScreen]);
 
-  return (
+  return showLoadingScreen ? (
+    <LoadingScreen />
+  ) : (
     <>
-      {showLoadingScreen && <LoadingScreen />}
-      {!showLoadingScreen && (
         <ClippyProvider agentName={AGENTS.ROVER}>
           <Rover/>
         </ClippyProvider>
-      )}
       <Desktop />
     </>
   );
