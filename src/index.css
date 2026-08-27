@@ -242,6 +242,11 @@ a {
     -webkit-overflow-scrolling: touch;
   }
 
+  .responsive-modal--cv .responsive-modal__content {
+    margin: 0;
+    padding: 0;
+  }
+
   .responsive-modal--about .responsive-modal__content {
     flex: 0 1 auto;
   }
