@@ -33,7 +33,7 @@ const handleButtonClick = () => {
         },]}>
             <Modal.Content
                 className="responsive-modal__content"
-                width="min(92vw, 800px)"
+                width="min(92vw, 640px)"
                 height="min(88vh, 780px)"
                 boxShadow="$in"
                 bgColor="white"
