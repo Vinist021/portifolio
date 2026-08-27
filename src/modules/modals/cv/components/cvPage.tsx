@@ -68,7 +68,7 @@ export default function CVComponent({ data = defaultCVData }) {
                 <span className="text-sm">{data.phone}</span>
               </div>
 
-              <div className="flex min-w-0 items-start gap-3 sm:items-center">
+              <div className="flex min-w-0 items-start gap-3 sm:items-center md:-ml-10">
                 <Mail className="w-5 h-5 flex-shrink-0" />
                 <a
                   href={`mailto:${data.email}`}
