@@ -1,4 +1,4 @@
-import { Explorer101, Awschd32400, Wab321019 } from "@react95/icons"
+import { Explorer101, Awschd32400 } from "@react95/icons"
 import { TaskBar, List } from "@react95/core"
 import SocialMenu from "./socialMenu"
 // import xp from "../../assets/images/xp.png"
