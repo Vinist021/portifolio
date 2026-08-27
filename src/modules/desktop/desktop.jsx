@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Explorer101 } from "@react95/icons";
 import { modals } from "../../shared/utils/modals"
 import AboutModal from "../modals/about/aboutModal";
-import DesktopIcons from "./desktopIcons";
-import DesktopTaskBar from "./desktopTaskBar";
+import DesktopIcons from "./desktopIcons/desktopIcons";
+import DesktopTaskBar from "./desktopTaskBar/desktopTaskBar";
 // import ExperienceModal from "../modals/experience/experienceModal";
 // import TechnologiesModal from "../modals/technologies/technologiesModal";
 import CVModal from "../modals/cv/cvModal";
